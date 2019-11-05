@@ -2,19 +2,37 @@
 
 public class PlayerCameraController : MonoBehaviour
 {
-    [SerializeField] private Transform cameraHolder;
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private Transform cameraTargetTransform;
+
     [Space(10)]
     [SerializeField] private float xAxisSens;
     [SerializeField] private float yAxisSens;
+
+    [Space(10)]
+    [SerializeField] private Vector3 targetOffset;
+    [SerializeField] private Vector3 cameraOffset;
+    [SerializeField] private Vector3 cameraControllerOffset;
     private float xAngle;
+    private float yAngle;
+    private Transform playerTransform;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        InitializeCamera();
     }
 
-    void Update()
+    void LateUpdate()
     {
         CameraMovement();
+    }
+
+    private void InitializeCamera()
+    {
+        playerTransform = PlayerController.instance.transform;
+        cameraControllerOffset = transform.position - playerTransform.position;
+        targetOffset = transform.position - cameraTargetTransform.position;
+        cameraTransform.position = new Vector3(cameraTransform.transform.position.x , cameraTargetTransform.position.y, cameraTransform.position.z);
     }
     
     private void CameraMovement()
@@ -23,12 +41,15 @@ public class PlayerCameraController : MonoBehaviour
         float YangleDelta = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xAxisSens;
 
         xAngle -= XangleDelta;
+        yAngle += YangleDelta;
+        xAngle = Mathf.Clamp(xAngle, -60,60);
+        
+        // cameraTransform.Rotate(Vector3.up, YangleDelta);
+        cameraTransform.LookAt(cameraTargetTransform);
+        transform.rotation = Quaternion.Euler(xAngle, yAngle,0);   
+        transform.RotateAround(playerTransform.position, Vector3.up, YangleDelta);
 
-        xAngle = Mathf.Clamp(xAngle, -90,90);
-
-        transform.Rotate(Vector3.up, YangleDelta);
-
-        cameraHolder.localRotation = Quaternion.Euler(xAngle,0,0);   
-                
+        //Updating Position
+        transform.position = playerTransform.position + cameraControllerOffset;
     }
 }
