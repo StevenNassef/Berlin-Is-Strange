@@ -9,18 +9,16 @@ public class PlayerCameraController : MonoBehaviour
     private float xAngle;
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
         CameraMovement();
     }
-
     
     private void CameraMovement()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
+    {   
         float XangleDelta = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * yAxisSens;
         float YangleDelta = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xAxisSens;
 
