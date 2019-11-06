@@ -10,6 +10,7 @@ public class PlayerCameraController : MonoBehaviour
     [SerializeField] private float yAxisSens;
 
     [Space(10)]
+    [SerializeField] private float cameraSmoothingFactor;
     [SerializeField] private Vector3 targetOffset;
     [SerializeField] private Vector3 cameraOffset;
     [SerializeField] private Vector3 cameraControllerOffset;
@@ -32,7 +33,7 @@ public class PlayerCameraController : MonoBehaviour
         playerTransform = PlayerController.instance.transform;
         cameraControllerOffset = transform.position - playerTransform.position;
         targetOffset = transform.position - cameraTargetTransform.position;
-        cameraTransform.position = new Vector3(cameraTransform.transform.position.x , cameraTargetTransform.position.y, cameraTransform.position.z);
+        cameraTransform.position = cameraTargetTransform.position + cameraOffset;
     }
     
     private void CameraMovement()
@@ -50,6 +51,6 @@ public class PlayerCameraController : MonoBehaviour
         transform.RotateAround(playerTransform.position, Vector3.up, YangleDelta);
 
         //Updating Position
-        transform.position = playerTransform.position + cameraControllerOffset;
+        transform.position = Vector3.Lerp(playerTransform.position + cameraControllerOffset, playerTransform.position, cameraSmoothingFactor * 0.00001f * Time.deltaTime);
     }
 }
