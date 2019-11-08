@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    private Level _currentLevel;
-    public Level CurrentLevel
-    {
-        get { return _currentLevel; }
-    }
-
-    private int currentLevelNumber;
-    private GameObject currentLevelPrefab;
-
-    private int currentNumberOfFlicks;
     private static LevelManager _instance;
     public static LevelManager Instance { get { return _instance; } }
+    public delegate void GameControlsWithBoolean(bool isEnabled);
+    
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -29,7 +21,6 @@ public class LevelManager : MonoBehaviour
         }
         // DontDestroyOnLoad(gameObject);
         GameManager.OnGameInitialized += LevelInitialization;
-        GameManager.OnGameLoaded += DestoryLevel;
     }
 
     void Start()
@@ -42,40 +33,11 @@ public class LevelManager : MonoBehaviour
     {
 
     }
-
     private void LevelInitialization()
     {
-        if (currentLevelPrefab != null)
-            Destroy(currentLevelPrefab);
-        currentLevelPrefab = Instantiate(CurrentLevel.LevelPrefab);
-
-        _currentLevel.CurrentScore = 0;
-        currentNumberOfFlicks = 0;
-    }
-    public void LoadNextLevel()
-    {
-
 
     }
 
-    public void LoadLevel(Level value, int LevelNumber)
-    {
-        _currentLevel = value;
-        currentLevelNumber = LevelNumber;
-        GameManager.instance.StartLevel();
-
-    }
-
-    private void DestoryLevel()
-    {
-        Destroy(currentLevelPrefab);
-    }
-
-    public void updateFlicks()
-    {
-        currentNumberOfFlicks++;
-        _currentLevel.CurrentScore = currentNumberOfFlicks;
-    }
     public void EndGame(GameState state)
     {
         switch (state)
@@ -109,8 +71,4 @@ public class LevelManager : MonoBehaviour
 public enum GameState
 {
     GAMEOVER_LOSE, GAMEOVER_WIN
-}
-public enum LevelScore
-{
-    ONE_STAR, TWO_STARS, THREE_STARS
 }

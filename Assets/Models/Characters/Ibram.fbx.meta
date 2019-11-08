@@ -11,32 +11,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bodymat
-    second: {fileID: 2100000, guid: e9c1985026c102245bb879ec9e15288b, type: 2}
+    second: {fileID: 2100000, guid: 3506718c261c9324da0822e9cc7c5643, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bottommat
-    second: {fileID: 2100000, guid: 65cab08fbd5d9cc4fbcce26a88260c82, type: 2}
+    second: {fileID: 2100000, guid: 8cc1a714df3022f4ab023e34ee7f0e21, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hairmat
-    second: {fileID: 2100000, guid: 6d1c05a80f996a944be1f4adacd06aa8, type: 2}
+    second: {fileID: 2100000, guid: 321f745adf7a7634681299373b7d2ef9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shoesmat
-    second: {fileID: 2100000, guid: 82c9a45d099b6804b88254057d2fdd7e, type: 2}
+    second: {fileID: 2100000, guid: bd0717c01caee3142b11d61887c4c955, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Topmat
-    second: {fileID: 2100000, guid: 83b84bf89eb5dd64cb42affa4655d251, type: 2}
+    second: {fileID: 2100000, guid: 8d5e87ae45e3a694a817d1e53f2b0f9a, type: 2}
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 1
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -63,14 +63,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 2
+    meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -90,10 +90,10 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
+    blendShapeNormalImportMode: 0
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1

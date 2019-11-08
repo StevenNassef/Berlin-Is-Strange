@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public static event GameControls OnGamePaused;
     public static event GameControls OnGameResumed;
     public static event GameControlsWithState OnGameOver;
-    public static event GameControlsWithState OnLevelUp;
     public static event GameControls OnGameLoaded;
     public static event GameControls OnGameInitialized;
 
@@ -54,6 +53,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         loadGame();
+        StartLevel();
     }
 
     public void StartLevel()
@@ -64,18 +64,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            PauseGame();
-        }
-        else if (Input.GetKeyUp(KeyCode.R))
-        {
-            ResumeGame();
-        }
-        else if (Input.GetKeyUp(KeyCode.S))
-        {
-            StartLevel();
-        }
     }
 
     // Update is called once per frame
@@ -83,12 +71,20 @@ public class GameManager : MonoBehaviour
     public void loadGame()
     {
         _gamePaused = true;
-        OnGameLoaded.Invoke();
+        Time.timeScale = 0;
+        if (OnGameLoaded != null)
+        {
+            OnGameLoaded.Invoke();
+            Debug.Log("Game Loaded");
+        }
     }
     public void IntializeGame()
     {
         if (OnGameInitialized != null)
+        {
             OnGameInitialized.Invoke();
+            Debug.Log("Game Initalized");
+        }
     }
     public void StartGame()
     {
@@ -96,9 +92,9 @@ public class GameManager : MonoBehaviour
         _gamePaused = false;
         if (OnGameStarted != null)
         {
-
-            if (OnGameStarted != null)
-                OnGameStarted.Invoke();
+            OnGameStarted.Invoke();
+            Time.timeScale = 1;
+            Debug.Log("Game Started");
             // GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "game");
         }
     }
@@ -107,7 +103,9 @@ public class GameManager : MonoBehaviour
         if (_gamePaused == false && OnGamePaused != null)
         {
             _gamePaused = true;
+            Time.timeScale = 0;
             OnGamePaused.Invoke();
+            Debug.Log("Game Paused");
         }
     }
     public void ResumeGame()
@@ -115,7 +113,9 @@ public class GameManager : MonoBehaviour
         if (_gamePaused == true && OnGameResumed != null)
         {
             _gamePaused = false;
+            Time.timeScale = 1;
             OnGameResumed.Invoke();
+            Debug.Log("Game Resumed");
         }
 
     }
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         IntializeGame();
         StartGame();
     }
-    
+
     public void GameOver(GameState state)
     {
         // currentPlayerStats = Player.GetComponent<ScoreManager>().playerStats;
@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
         {
             _gameEnded = true;
             OnGameOver.Invoke(state);
+            Time.timeScale = 0;
             Debug.Log("GameOver");
             // GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "game", LevelManager.instance.getCurrentPlayerStats().kills);
         }
@@ -142,5 +143,10 @@ public class GameManager : MonoBehaviour
     public void setVibrationMode(bool state)
     {
         vibration = !state;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
