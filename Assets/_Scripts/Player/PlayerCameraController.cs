@@ -3,6 +3,10 @@
 public class PlayerCameraController : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
+    public Transform CameraTransform { get { return cameraTransform; } }
+
+    [SerializeField] private Camera playerCamera;
+    public Camera PlayerCamera { get { return playerCamera; } }
     [SerializeField] private Transform cameraTargetTransform;
 
     [Space(10)]
@@ -17,6 +21,28 @@ public class PlayerCameraController : MonoBehaviour
     private float xAngle;
     private float yAngle;
     private Transform playerTransform;
+
+    private static PlayerCameraController _instance;
+    
+    public static PlayerCameraController instance { get { return _instance; } }
+    void Awake()
+    {
+        //Check if instance already exists
+        if (_instance == null)
+
+            //if not, set instance to this
+            _instance = this;
+
+        //If instance already exists and it's not this:
+        else if (_instance != this)
+
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            Destroy(gameObject);
+
+        //Sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad(gameObject);
+        // GameAnalytics.Initialize(); 
+    }
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -47,10 +73,12 @@ public class PlayerCameraController : MonoBehaviour
         
         // cameraTransform.Rotate(Vector3.up, YangleDelta);
         cameraTransform.LookAt(cameraTargetTransform);
+        // cameraTransform.rotation = Quaternion.LookRotation(Vector3.Lerp((cameraTargetTransform.position - cameraTransform.position).normalized, cameraTransform.forward, Time.deltaTime));
         transform.rotation = Quaternion.Euler(xAngle, yAngle,0);   
-        transform.RotateAround(playerTransform.position, Vector3.up, YangleDelta);
+        
 
         //Updating Position
-        transform.position = Vector3.Lerp(playerTransform.position + cameraControllerOffset, playerTransform.position, cameraSmoothingFactor * 0.00001f * Time.deltaTime);
+        // transform.position = Vector3.Lerp(playerTransform.position + cameraControllerOffset, playerTransform.position, Time.deltaTime);
+        transform.position = playerTransform.position + cameraControllerOffset;
     }
 }
