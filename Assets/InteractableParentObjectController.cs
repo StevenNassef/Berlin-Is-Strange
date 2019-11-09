@@ -94,8 +94,13 @@ public class InteractableParentObjectController : MonoBehaviour
         return interactable;
     }
 
-    public virtual void Interact()
+    public virtual bool Interact()
     {
-
+        if(selected)
+        {
+            Debug.Log("INTERACTION DONE!");
+            return true;
+        }
+        return false;
     }
 }

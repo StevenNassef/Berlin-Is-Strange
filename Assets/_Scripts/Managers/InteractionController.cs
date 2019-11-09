@@ -40,6 +40,15 @@ public class InteractionController : MonoBehaviour
         CheckObject();
     }
 
+    public bool Interact()
+    {
+        if(currentInteractableObject)
+        {
+            return currentInteractableObject.Interact();   
+        }
+        return false;
+    }
+
     private void CheckObject()
     {
 
