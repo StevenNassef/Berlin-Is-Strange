@@ -56,11 +56,14 @@ public class InteractableParentObjectController : MonoBehaviour
 
     public void SetInteractable(bool enable)
     {
-        if(interactable != enable)
+        if (interactable != enable)
         {
-            Debug.Log("INTERACTBLE");
-            interactable = enable;
-            this.OnInteractableActivated.Invoke(enable);
+            if (this.OnInteractableActivated != null)
+            {
+                interactable = enable;
+                Debug.Log("INTERACTBLE");
+                this.OnInteractableActivated.Invoke(enable);
+            }
         }
     }
 

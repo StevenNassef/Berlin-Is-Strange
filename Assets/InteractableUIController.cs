@@ -18,11 +18,10 @@ public class InteractableUIController : MonoBehaviour
     private CanvasGroup objectUICanvasGroup;
     private bool glow; //show the state of the glow
 
-    void Start()
+    private void Awake()
     {
         InitUI();
     }
-
     protected void InitUI()
     {
         objectUICanvas = GetComponentInChildren<Canvas>();
