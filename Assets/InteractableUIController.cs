@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class InteractableUIController : MonoBehaviour
 {
 
     [SerializeField] private GameObject namePanel;
     [SerializeField] private GameObject optionsPanel;
-    [SerializeField] private Shader outlineShader;
-    [SerializeField] private Shader defaultShader;
+    private TextMeshProUGUI nameText;
+    private TextMeshProUGUI interactionText;
     [Space(10)]
 
     [Tooltip("Scaling factor with respect to the distance from the camera.")]
     [SerializeField] private float scaleFactor; //Scaling factor with respect to the distance of the camera
+
     private InteractableParentObjectController objectController;
     private InteractableObjectUI objectUI;
     private Text objectNameText;
@@ -33,6 +35,12 @@ public class InteractableUIController : MonoBehaviour
         objectUICanvasGroup = GetComponentInChildren<CanvasGroup>();
         objectController = transform.GetComponentInParent<InteractableParentObjectController>();
         objectController.OnObjectSelected += OnObjectSelected;
+
+        nameText = namePanel.transform.GetComponentInChildren<TextMeshProUGUI>();
+        interactionText = optionsPanel.transform.GetComponentInChildren<TextMeshProUGUI>();
+
+        nameText.SetText(objectController.ObjectName);
+        interactionText.SetText(objectController.InteractionName);
     }
     void LateUpdate()
     {
@@ -65,18 +73,7 @@ public class InteractableUIController : MonoBehaviour
     }
     private void MakeObjectGlow(bool enable)
     {
-        if (glow != enable)
-        {
-            Material[] mats = objectController.ObjectGFX.GetComponent<MeshRenderer>().materials;
-            foreach (Material mat in mats)
-            {
-                if (enable)
-                    mat.shader = outlineShader;
-                else
-                    mat.shader = defaultShader;
-            }
-            glow = enable;
-        }
+        //TODO make the object Glow somehow.
     }
 
     private void OnDisable()

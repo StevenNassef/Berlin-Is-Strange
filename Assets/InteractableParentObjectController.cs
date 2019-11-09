@@ -5,6 +5,13 @@ public class InteractableParentObjectController : MonoBehaviour
 
     [SerializeField] private GameObject objectGFX;
     [Space(10)]
+    [Tooltip("The name of this object.")]
+    [SerializeField] private string objectName = "Object";
+    public string ObjectName { get { return objectName; } }
+    [Tooltip("The name of the action of that can be applied on this object.")]
+    [SerializeField] private string interactionName = "Interact";
+    public string InteractionName { get { return interactionName; } }
+    [Space(10)]
     [Tooltip("if this object is interactble by the player or not.")]
     [SerializeField] protected bool interactable;
     [Tooltip("Minimum Distance at which the Object's UI can be seen.")]
@@ -95,7 +102,7 @@ public class InteractableParentObjectController : MonoBehaviour
 
     public virtual bool Interact()
     {
-        if(selected)
+        if (selected)
         {
             Debug.Log("INTERACTION DONE!");
             return true;

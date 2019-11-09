@@ -128,8 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namePanel: {fileID: 476844646194211807}
   optionsPanel: {fileID: 476844645004086243}
-  outlineShader: {fileID: 4800000, guid: ea542a84b4853214287a2d76d28ffda8, type: 3}
-  defaultShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   scaleFactor: 0.0005
 --- !u!1 &476844645004086243
 GameObject:
@@ -214,6 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectGFX: {fileID: 476844646265270066}
+  objectName: Object
+  interactionName: Interact
+  interactable: 1
   minimumViewDistance: 15
 --- !u!1 &476844646194211807
 GameObject:
@@ -434,7 +435,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 206.25
+  m_fontSize: 179.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 9133154559563585943}
-    characterCount: 6
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
