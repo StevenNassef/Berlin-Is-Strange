@@ -30,9 +30,9 @@ public class PlayerMotor : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector3 targetDirection = cameraTarget.forward * Input.GetAxis("Vertical");
+        Vector3 targetDirection = cameraTarget.forward * Input.GetAxis(InputController.instance.VerticalAxis);
         
-        targetDirection += cameraTarget.right * Input.GetAxis("Horizontal");
+        targetDirection += cameraTarget.right * Input.GetAxis(InputController.instance.HorizontalAxis);
         targetDirection = Vector3.ProjectOnPlane(targetDirection, Vector3.up);
         targetDirection.Normalize();
 
@@ -63,8 +63,8 @@ public class PlayerMotor : MonoBehaviour
 
         characterController.Move(targetDirection * movementSpeed * Time.deltaTime);
 
-        Vector3 localMoveDirection = Vector3.forward * Input.GetAxis("Vertical");
-        localMoveDirection += Vector3.right * Input.GetAxis("Horizontal");
+        Vector3 localMoveDirection = Vector3.forward * Input.GetAxis(InputController.instance.VerticalAxis);
+        localMoveDirection += Vector3.right * Input.GetAxis(InputController.instance.HorizontalAxis);
 
         localMoveDirection.Normalize();
         playerAnimator.SetFloat("Speed", localMoveDirection.magnitude);

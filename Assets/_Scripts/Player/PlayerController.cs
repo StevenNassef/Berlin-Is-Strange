@@ -2,7 +2,8 @@
 
 public class PlayerController : GameComponent
 {
-    private PlayerMotor motor;
+    [SerializeField] private PlayerMotor motor;
+    public PlayerMotor Motor { get { return motor; } }
     private PlayerCameraController cameraController;
 
     private static PlayerController _instance;
@@ -27,8 +28,7 @@ public class PlayerController : GameComponent
     }
     void Start()
     {
-        motor = GetComponent<PlayerMotor>();
-        cameraController = GetComponent<PlayerCameraController>();
+        cameraController = PlayerCameraController.instance;
     }
 
     void Update()

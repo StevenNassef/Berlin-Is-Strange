@@ -64,8 +64,8 @@ public class PlayerCameraController : MonoBehaviour
     
     private void CameraMovement()
     {   
-        float XangleDelta = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * yAxisSens;
-        float YangleDelta = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xAxisSens;
+        float XangleDelta = Input.GetAxisRaw(InputController.instance.Yaxis) * Time.deltaTime * yAxisSens;
+        float YangleDelta = Input.GetAxisRaw(InputController.instance.Xaxis) * Time.deltaTime * xAxisSens;
 
         xAngle -= XangleDelta;
         yAngle += YangleDelta;

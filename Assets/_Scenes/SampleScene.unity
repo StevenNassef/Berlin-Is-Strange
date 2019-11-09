@@ -651,6 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136668277}
   - component: {fileID: 1136668278}
+  - component: {fileID: 1136668279}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -689,6 +690,23 @@ MonoBehaviour:
   _gameState: 0
   vibration: 0
   MainCamera: {fileID: 0}
+--- !u!114 &1136668279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136668276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67ed7f4556d1e74f8d6c508e5ef4f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xAxis: Mouse X
+  yAxis: Mouse Y
+  verticalAxis: Vertical
+  horizontalAxis: Horizontal
+  interactionButton: e
 --- !u!1 &1716817812
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,5 +947,9 @@ PrefabInstance:
       propertyPath: cameraTarget
       value: 
       objectReference: {fileID: 547835578099726101}
+    - target: {fileID: 489874365, guid: 29fa1d3b669c54a4fad6820b5fa0077d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29fa1d3b669c54a4fad6820b5fa0077d, type: 3}

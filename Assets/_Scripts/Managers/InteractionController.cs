@@ -38,6 +38,11 @@ public class InteractionController : MonoBehaviour
     void Update()
     {
         CheckObject();
+
+        if(Input.GetKeyDown(InputController.instance.InteractionButton))
+        {
+            Interact();
+        }
     }
 
     public bool Interact()

@@ -66,7 +66,6 @@ public class InteractableParentObjectController : MonoBehaviour
             if (selected != enable && this.OnObjectSelected != null)
             {
                 selected = enable;
-                Debug.Log("INTERACTBLE");
                 this.OnObjectSelected.Invoke(enable);
             }
             return true;
