@@ -924,20 +924,5 @@ PrefabInstance:
       propertyPath: cameraTarget
       value: 
       objectReference: {fileID: 547835578099726101}
-    - target: {fileID: 783517717682229036, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
-        type: 3}
-      propertyPath: minimumInteractionDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 783517717682229036, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
-        type: 3}
-      propertyPath: interactableLayerNumber
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 783517717682229036, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
-        type: 3}
-      propertyPath: interactableLayerNumber.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29fa1d3b669c54a4fad6820b5fa0077d, type: 3}

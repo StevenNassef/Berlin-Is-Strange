@@ -22,6 +22,11 @@ public class InteractableUIController : MonoBehaviour
     {
         InitUI();
     }
+    private void OnEnable()
+    {
+        if(objectController != null)
+            objectController.OnInteractableActivated += OnInteractableEnabled;
+    }
     protected void InitUI()
     {
         objectUICanvas = GetComponentInChildren<Canvas>();

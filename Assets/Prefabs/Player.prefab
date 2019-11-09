@@ -112,6 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b780a74de2ead384a9e36b7094e4c71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimumInteractionDistance: 7
+  interactableLayerNumber:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &8064203713644359334
 PrefabInstance:
   m_ObjectHideFlags: 0
