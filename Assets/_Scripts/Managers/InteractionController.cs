@@ -32,7 +32,7 @@ public class InteractionController : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class InteractionController : MonoBehaviour
 
     private void CheckObject()
     {
-        
+
         RaycastHit hit;
         Debug.DrawRay(PlayerCameraController.instance.CameraTransform.position,
         PlayerCameraController.instance.CameraTransform.forward * minimumInteractionDistance, Color.red, 0.1f, true);
@@ -52,13 +52,32 @@ public class InteractionController : MonoBehaviour
         minimumInteractionDistance,
          interactableLayerNumber))
         {
-            currentInteractableObject = hit.collider.gameObject.GetComponentInParent<InteractableParentObjectController>();
-            currentInteractableObject.SetInteractable(true);
+
+            if (currentInteractableObject)
+            {
+                if (currentInteractableObject != hit.collider.gameObject.GetComponentInParent<InteractableParentObjectController>())
+                {
+                    currentInteractableObject.SetObjectSelected(false);
+                    currentInteractableObject = hit.collider.gameObject.GetComponentInParent<InteractableParentObjectController>();
+                    currentInteractableObject = currentInteractableObject.SetObjectSelected(true) ? currentInteractableObject : null;
+
+                }
+            }
+            else
+            {
+                currentInteractableObject = hit.collider.gameObject.GetComponentInParent<InteractableParentObjectController>();
+                currentInteractableObject = currentInteractableObject.SetObjectSelected(true) ? currentInteractableObject : null;
+            }
+
         }
-        else if(currentInteractableObject)
+        else
         {
-            currentInteractableObject.SetInteractable(false);
-            currentInteractableObject = null;
+            if (currentInteractableObject)
+            {
+                currentInteractableObject.SetObjectSelected(false);
+                currentInteractableObject = null;
+            }
         }
+
     }
 }

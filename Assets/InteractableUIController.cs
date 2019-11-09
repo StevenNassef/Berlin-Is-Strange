@@ -25,14 +25,14 @@ public class InteractableUIController : MonoBehaviour
     private void OnEnable()
     {
         if(objectController != null)
-            objectController.OnInteractableActivated += OnInteractableEnabled;
+            objectController.OnObjectSelected += OnObjectSelected;
     }
     protected void InitUI()
     {
         objectUICanvas = GetComponentInChildren<Canvas>();
         objectUICanvasGroup = GetComponentInChildren<CanvasGroup>();
         objectController = transform.GetComponentInParent<InteractableParentObjectController>();
-        objectController.OnInteractableActivated += OnInteractableEnabled;
+        objectController.OnObjectSelected += OnObjectSelected;
     }
     void LateUpdate()
     {
@@ -54,7 +54,7 @@ public class InteractableUIController : MonoBehaviour
 
     }
 
-    private void OnInteractableEnabled(bool enable)
+    private void OnObjectSelected(bool enable)
     {
 
         //Show the options panel
@@ -81,6 +81,6 @@ public class InteractableUIController : MonoBehaviour
 
     private void OnDisable()
     {
-        objectController.OnInteractableActivated -= OnInteractableEnabled;
+        objectController.OnObjectSelected -= OnObjectSelected;
     }
 }

@@ -5,12 +5,14 @@ public class InteractableParentObjectController : MonoBehaviour
 
     [SerializeField] private GameObject objectGFX;
     [Space(10)]
+    [Tooltip("if this object is interactble by the player or not.")]
+    [SerializeField] protected bool interactable;
     [Tooltip("Minimum Distance at which the Object's UI can be seen.")]
     [SerializeField] private float minimumViewDistance;
 
     protected InteractableUIController UIController;
 
-    protected bool interactable;
+    protected bool selected;
     private float deltaDistance;
     public float DeltaDistance { get { return deltaDistance; } }
     public float MinimumViewDistance { get { return minimumViewDistance; } }
@@ -18,7 +20,7 @@ public class InteractableParentObjectController : MonoBehaviour
 
     public delegate void InteractableControls(bool enable);
 
-    public event InteractableControls OnInteractableActivated;
+    public event InteractableControls OnObjectSelected;
 
     void Start()
     {
@@ -42,32 +44,52 @@ public class InteractableParentObjectController : MonoBehaviour
 
     private void UpdateObject()
     {
-        deltaDistance = (PlayerCameraController.instance.CameraTransform.position - transform.position).magnitude;
+        if (interactable)
+        {
+            deltaDistance = (PlayerCameraController.instance.CameraTransform.position - transform.position).magnitude;
 
-        if (deltaDistance > minimumViewDistance)
-        {
-            UIController.enabled = false;
-        }
-        else
-        {
-            UIController.enabled = true;
-        }
-    }
-
-    public void SetInteractable(bool enable)
-    {
-        if (interactable != enable)
-        {
-            if (this.OnInteractableActivated != null)
+            if (deltaDistance > minimumViewDistance)
             {
-                interactable = enable;
-                Debug.Log("INTERACTBLE");
-                this.OnInteractableActivated.Invoke(enable);
+                UIController.enabled = false;
+            }
+            else
+            {
+                UIController.enabled = true;
             }
         }
     }
 
+    public bool SetObjectSelected(bool enable)
+    {
+        if (interactable)
+        {
+            if (selected != enable && this.OnObjectSelected != null)
+            {
+                selected = enable;
+                Debug.Log("INTERACTBLE");
+                this.OnObjectSelected.Invoke(enable);
+            }
+            return true;
+        }
+        return false;
+    }
+    public void SetInteractable(bool enable)
+    {
+        if (enable != interactable)
+        {
+            if (!enable)
+            {
+                SetObjectSelected(false);
+            }
+        }
+        interactable = enable;
+    }
+
     public bool isInteractable()
+    {
+        return interactable;
+    }
+    public bool isSelected()
     {
         return interactable;
     }
