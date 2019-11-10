@@ -50,6 +50,7 @@ public class PlayerMotor : MonoBehaviour
 
             // moveDirection = Vector3.Lerp(transform.forward, targetDirection, rotationSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = targetRotation;
 
             moveDirection.y = 0;
             // transform.rotation = Quaternion.LookRotation(moveDirection, Vector3.up);

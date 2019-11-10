@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionController : MonoBehaviour
+public class InteractionController : GameComponent
 {
 
     [SerializeField] private float minimumInteractionDistance;
@@ -10,6 +10,10 @@ public class InteractionController : MonoBehaviour
 
     private InteractableParentObjectController currentInteractableObject;
     private static InteractionController _instance;
+
+    public delegate void InteractionControls();
+    public static event InteractionControls OnDisableInteractions;
+    public static event InteractionControls OnEnableInteractions;
 
     public static InteractionController instance { get { return _instance; } }
     void Awake()
@@ -29,27 +33,65 @@ public class InteractionController : MonoBehaviour
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
         // GameAnalytics.Initialize(); 
+        OnComponentEnabled();
     }
-    void Start()
+
+    protected override void OnComponentEnabled()
     {
-
+        Debug.Log("Added");
+        GameManager.OnCutSceneStarted += DisableAllInteraction;
+        GameManager.OnCutSceneEnded += EnableAllInteraction;
     }
-
-    void Update()
+    protected override void UpdateComponent()
     {
         CheckObject();
 
-        if(Input.GetKeyDown(InputController.instance.InteractionButton))
+        if (Input.GetKeyDown(InputController.instance.InteractionButton))
         {
             Interact();
         }
     }
 
+    public void DisableAllInteraction()
+    {
+        if (OnDisableInteractions != null)
+        {
+            OnDisableInteractions.Invoke();
+            Debug.Log("ALL Interactions Disabled");
+        }
+        else
+        {
+            StartCoroutine(WaitForListeners(false));
+        }
+    }
+    public void EnableAllInteraction()
+    {
+        if (OnEnableInteractions != null)
+        {
+            OnEnableInteractions.Invoke();
+            Debug.Log("ALL Interactions Enabled");
+        }
+        else
+        {
+            StartCoroutine(WaitForListeners(true));
+        }
+
+    }
+
+    IEnumerator WaitForListeners(bool isEnable)
+    {
+        yield return new WaitForSeconds(1);
+        Debug.Log("Timer");
+        if(isEnable)
+            EnableAllInteraction();
+        else   
+            DisableAllInteraction();
+    }
     public bool Interact()
     {
-        if(currentInteractableObject)
+        if (currentInteractableObject)
         {
-            return currentInteractableObject.Interact();   
+            return currentInteractableObject.Interact();
         }
         return false;
     }

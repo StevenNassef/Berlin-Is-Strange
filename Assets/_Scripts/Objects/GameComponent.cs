@@ -35,6 +35,8 @@ public abstract class GameComponent : MonoBehaviour
         GameManager.OnGameInitialized += initializeGame;
         GameManager.OnGameLoaded += loadGame;
         GameManager.OnGameOver += gameOver;
+        GameManager.OnCutSceneEnded += endCutScene;
+        GameManager.OnCutSceneStarted += startCutScene;
         OnComponentEnabled();
     }
     void OnDisable()
@@ -45,6 +47,8 @@ public abstract class GameComponent : MonoBehaviour
         GameManager.OnGameInitialized -= initializeGame;
         GameManager.OnGameLoaded -= loadGame;
         GameManager.OnGameOver -= gameOver;
+        GameManager.OnCutSceneEnded -= endCutScene;
+        GameManager.OnCutSceneStarted -= startCutScene;
         OnComponentDisabled();
     }
 
@@ -56,6 +60,8 @@ public abstract class GameComponent : MonoBehaviour
         GameManager.OnGameInitialized -= initializeGame;
         GameManager.OnGameLoaded -= loadGame;
         GameManager.OnGameOver -= gameOver;
+        GameManager.OnCutSceneEnded -= endCutScene;
+        GameManager.OnCutSceneStarted -= startCutScene;
         OnComponentDestroyed();
     }
 
@@ -79,6 +85,14 @@ public abstract class GameComponent : MonoBehaviour
     {
         GameResumed();
     }
+    private void startCutScene()
+    {
+        CutSceneStarted();
+    }
+    private void endCutScene()
+    {
+        CutSceneEnded();
+    }
     private void gameOver(GameState state)
     {
         GameEnded(state);
@@ -88,6 +102,8 @@ public abstract class GameComponent : MonoBehaviour
     protected virtual void GameStarted() { }
     protected virtual void GamePaused() { }
     protected virtual void GameResumed() { }
+    protected virtual void CutSceneEnded() { }
+    protected virtual void CutSceneStarted() { }
     protected virtual void GameEnded(GameState state) { }
 
 }

@@ -4,6 +4,7 @@ public class PlayerController : GameComponent
 {
     [SerializeField] private PlayerMotor motor;
     public PlayerMotor Motor { get { return motor; } }
+    [SerializeField] private GameObject GFX;
     private PlayerCameraController cameraController;
 
     private static PlayerController _instance;
@@ -29,6 +30,21 @@ public class PlayerController : GameComponent
     void Start()
     {
         cameraController = PlayerCameraController.instance;
+    }
+
+    protected override void CutSceneEnded()
+    {
+        // transform.rotation = Quaternion.identity;
+        // GFX.localRotation = Quaternion.identity;
+        // transform.position = GFX.position;
+        GFX.SetActive(true);
+        motor.enabled = true;
+    }
+
+    protected override void CutSceneStarted()
+    {
+        motor.enabled = false;
+        GFX.SetActive(false);
     }
 
     void Update()

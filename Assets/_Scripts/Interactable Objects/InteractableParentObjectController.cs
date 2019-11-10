@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-public class InteractableParentObjectController : MonoBehaviour
+using UnityEngine.Events;
+public class InteractableParentObjectController : GameComponent
 {
 
     [SerializeField] private GameObject objectGFX;
+    [SerializeField] private GameObject interactionUI;
     [Space(10)]
     [Tooltip("The name of this object.")]
     [SerializeField] private string objectName = "Object";
@@ -17,6 +18,8 @@ public class InteractableParentObjectController : MonoBehaviour
     [Tooltip("Minimum Distance at which the Object's UI can be seen.")]
     [SerializeField] private float minimumViewDistance;
 
+    public UnityEvent OnInteraction;
+
     protected InteractableUIController UIController;
 
     protected bool selected;
@@ -29,16 +32,16 @@ public class InteractableParentObjectController : MonoBehaviour
 
     public event InteractableControls OnObjectSelected;
 
-    void Start()
+
+
+    private void Awake()
     {
         InitObject();
     }
-
-    void Update()
+    protected override void UpdateComponent()
     {
         UpdateObject();
     }
-
     protected void InitObject()
     {
         InitUI();
@@ -46,7 +49,8 @@ public class InteractableParentObjectController : MonoBehaviour
 
     private void InitUI()
     {
-        UIController = GetComponentInChildren<InteractableUIController>();
+        UIController = interactionUI.transform.GetComponent<InteractableUIController>();
+        Debug.Log(UIController);
     }
 
     private void UpdateObject()
@@ -79,6 +83,26 @@ public class InteractableParentObjectController : MonoBehaviour
         }
         return false;
     }
+
+    protected override void OnComponentDisabled()
+    {
+        InteractionController.OnDisableInteractions -= OnInteractionDisabled;
+        InteractionController.OnEnableInteractions -= OnInteractionEnabled;
+    }
+    protected override void OnComponentEnabled()
+    {
+        InteractionController.OnDisableInteractions += OnInteractionDisabled;
+        InteractionController.OnEnableInteractions += OnInteractionEnabled;
+    }
+    private void OnInteractionDisabled()
+    {
+        SetInteractable(false);
+    }
+
+    private void OnInteractionEnabled()
+    {
+        SetInteractable(true);
+    }
     public void SetInteractable(bool enable)
     {
         if (enable != interactable)
@@ -87,6 +111,7 @@ public class InteractableParentObjectController : MonoBehaviour
             {
                 SetObjectSelected(false);
             }
+            interactionUI.SetActive(enabled);
         }
         interactable = enable;
     }
@@ -100,13 +125,14 @@ public class InteractableParentObjectController : MonoBehaviour
         return interactable;
     }
 
-    public virtual bool Interact()
+    public bool Interact()
     {
-        if (selected)
+        if (OnInteraction != null)
         {
-            Debug.Log("INTERACTION DONE!");
+            OnInteraction.Invoke();
             return true;
         }
         return false;
+
     }
 }

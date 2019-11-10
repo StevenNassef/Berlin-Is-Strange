@@ -19,12 +19,16 @@ public class GameManager : MonoBehaviour
     public static event GameControls OnGameResumed;
     public static event GameControlsWithState OnGameOver;
     public static event GameControls OnGameLoaded;
+    public static event GameControls OnCutSceneStarted;
+    public static event GameControls OnCutSceneEnded;
     public static event GameControls OnGameInitialized;
 
     [SerializeField] private bool _gameEnded;
     public bool isGameEnded { get { return _gameEnded; } }
     [SerializeField] private bool _gamePaused;
     public bool isGamePaused { get { return _gamePaused; } }
+    [SerializeField] private bool _cutSceneRolling;
+    public bool isCutSceneRolling { get { return _cutSceneRolling; } }
     [SerializeField] private GameState _gameState;
     public GameState gameState { get { return _gameState; } }
 
@@ -98,6 +102,13 @@ public class GameManager : MonoBehaviour
             // GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "game");
         }
     }
+
+    public void StartScene()
+    {
+        Debug.Log("StartScene");
+        PlayerCameraController.instance.gameObject.SetActive(true);
+        PlayerController.instance.gameObject.SetActive(true);
+    }
     public void PauseGame()
     {
         if (_gamePaused == false && OnGamePaused != null)
@@ -108,6 +119,27 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Paused");
         }
     }
+
+    public void StartCutScene()
+    {
+        if (_cutSceneRolling == false && OnCutSceneStarted != null)
+        {
+            _cutSceneRolling = true;
+            OnCutSceneStarted.Invoke();
+            Debug.Log("Cut Scene Started");
+        }
+    }
+
+    public void EndCutScene()
+    {
+        if (_cutSceneRolling == true && OnCutSceneEnded != null)
+        {
+            _cutSceneRolling = false;
+            OnCutSceneEnded.Invoke();
+            Debug.Log("Cut Scene Ended");
+        }
+    }
+
     public void ResumeGame()
     {
         if (_gamePaused == true && OnGameResumed != null)

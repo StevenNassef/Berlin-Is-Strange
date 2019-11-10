@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-
-public class PlayerCameraController : MonoBehaviour
+using Cinemachine;
+public class PlayerCameraController : GameComponent
 {
     [SerializeField] private Transform cameraTransform;
     public Transform CameraTransform { get { return cameraTransform; } }
@@ -46,20 +46,24 @@ public class PlayerCameraController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        playerTransform = PlayerController.instance.transform;
         InitializeCamera();
     }
 
     void LateUpdate()
     {
-        CameraMovement();
+        if(!GameManager.instance.isCutSceneRolling)
+            CameraMovement();
     }
 
     private void InitializeCamera()
     {
-        playerTransform = PlayerController.instance.transform;
-        cameraControllerOffset = transform.position - playerTransform.position;
-        targetOffset = transform.position - cameraTargetTransform.position;
-        cameraTransform.position = cameraTargetTransform.position + cameraOffset;
+        
+        // cameraControllerOffset = transform.position - playerTransform.position;
+        // targetOffset = transform.position - cameraTargetTransform.position;
+        cameraTargetTransform.localPosition = targetOffset;
+        cameraTransform.localPosition = cameraOffset;
+        transform.position = playerTransform.position + cameraControllerOffset;
     }
     
     private void CameraMovement()

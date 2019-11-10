@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class InteractableUIController : MonoBehaviour
+public class InteractableUIController : GameComponent
 {
 
     [SerializeField] private GameObject namePanel;
@@ -24,7 +24,7 @@ public class InteractableUIController : MonoBehaviour
     {
         InitUI();
     }
-    private void OnEnable()
+    protected override void OnComponentEnabled()
     {
         if(objectController != null)
             objectController.OnObjectSelected += OnObjectSelected;
@@ -44,7 +44,10 @@ public class InteractableUIController : MonoBehaviour
     }
     void LateUpdate()
     {
-        UpdateUI();
+        if(!GameManager.instance.isCutSceneRolling)
+        {
+            UpdateUI();
+        }
     }
 
     protected void UpdateUI()
@@ -76,7 +79,7 @@ public class InteractableUIController : MonoBehaviour
         //TODO make the object Glow somehow.
     }
 
-    private void OnDisable()
+    protected override void OnComponentDisabled()
     {
         objectController.OnObjectSelected -= OnObjectSelected;
     }
