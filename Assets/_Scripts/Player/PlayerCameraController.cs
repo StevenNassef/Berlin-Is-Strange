@@ -23,7 +23,7 @@ public class PlayerCameraController : GameComponent
     private Transform playerTransform;
 
     private static PlayerCameraController _instance;
-    
+
     public static PlayerCameraController instance { get { return _instance; } }
     void Awake()
     {
@@ -52,37 +52,72 @@ public class PlayerCameraController : GameComponent
 
     void LateUpdate()
     {
-        if(!GameManager.instance.isCutSceneRolling)
+        if (!GameManager.instance.isCutSceneRolling)
             CameraMovement();
     }
 
     private void InitializeCamera()
     {
-        
+
         // cameraControllerOffset = transform.position - playerTransform.position;
         // targetOffset = transform.position - cameraTargetTransform.position;
         cameraTargetTransform.localPosition = targetOffset;
         cameraTransform.localPosition = cameraOffset;
         transform.position = playerTransform.position + cameraControllerOffset;
     }
-    
+
     private void CameraMovement()
-    {   
+    {
         float XangleDelta = Input.GetAxisRaw(InputController.instance.Yaxis) * Time.deltaTime * yAxisSens;
         float YangleDelta = Input.GetAxisRaw(InputController.instance.Xaxis) * Time.deltaTime * xAxisSens;
 
         xAngle -= XangleDelta;
         yAngle += YangleDelta;
-        xAngle = Mathf.Clamp(xAngle, -60,60);
-        
+        xAngle = Mathf.Clamp(xAngle, -60, 60);
+
         // cameraTransform.Rotate(Vector3.up, YangleDelta);
+        CheckCameraClipping();
         cameraTransform.LookAt(cameraTargetTransform);
         // cameraTransform.rotation = Quaternion.LookRotation(Vector3.Lerp((cameraTargetTransform.position - cameraTransform.position).normalized, cameraTransform.forward, Time.deltaTime));
-        transform.rotation = Quaternion.Euler(xAngle, yAngle,0);   
-        
+        transform.rotation = Quaternion.Euler(xAngle, yAngle, 0);
+
 
         //Updating Position
         // transform.position = Vector3.Lerp(playerTransform.position + cameraControllerOffset, playerTransform.position, Time.deltaTime);
         transform.position = playerTransform.position + cameraControllerOffset;
+    }
+
+    private void CheckCameraClipping()
+    {
+        int counter = 300;
+        cameraTransform.localPosition = cameraOffset;
+        RaycastHit hit;
+        Vector3 targetDirection = cameraTargetTransform.position - cameraTransform.position;
+
+        do
+        {
+            Debug.DrawRay(cameraTransform.position, targetDirection, Color.green, 0.1f);
+            if (Physics.Raycast(cameraTransform.position, targetDirection, out hit, 10f))
+            {
+                if (hit.collider.gameObject.CompareTag("CameraTargetTrigger"))
+                {
+                    break;
+                // Debug.Log("hit trigger");
+                }
+                else
+                {
+                    // Debug.Log("FindingTarget");
+                    Vector3 newPos = cameraTransform.localPosition;
+                    newPos.z += 0.05f;
+                    cameraTransform.localPosition = newPos;
+                }
+
+                
+            }
+
+            // Debug.Log(hit.collider.gameObject.tag);
+            counter--;
+        } while (counter > 0);
+
     }
 }
