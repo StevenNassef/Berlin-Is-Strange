@@ -264,6 +264,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
   m_Name: ActivationPlayableAsset
   m_EditorClassIdentifier: 
+--- !u!114 &-3119780481319251118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4211ebbfccb5b1f4f9d344d265a55b2a, type: 3}
+  m_Name: Decision Marker
+  m_EditorClassIdentifier: 
+  m_Time: 9.716666666666667
+  decision: {fileID: 11400000, guid: b585d6383b40b74488556f6dbc63b7a0, type: 2}
+  loopTime: 1.5
+  retroaction: 0
+  emitOnce: 1
 --- !u!114 &-2763252582834891279
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,6 +338,30 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 1
   m_Asset: {fileID: 11400000, guid: b8ba0fcd119d88a4f8d4c3dcaf439cf7, type: 2}
+--- !u!114 &-745766795179143621
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee004335ee5a724abd9e46149d4f718, type: 3}
+  m_Name: Decision Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -3119780481319251118}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +377,7 @@ MonoBehaviour:
   m_Version: 0
   m_Tracks:
   - {fileID: -8369383994052881779}
+  - {fileID: -745766795179143621}
   - {fileID: 7863077357482967805}
   - {fileID: -3556134332739050440}
   - {fileID: 2729296121001165262}

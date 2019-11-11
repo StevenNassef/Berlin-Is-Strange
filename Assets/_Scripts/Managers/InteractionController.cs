@@ -81,7 +81,7 @@ public class InteractionController : GameComponent
     IEnumerator WaitForListeners(bool isEnable)
     {
         yield return new WaitForSeconds(1);
-        Debug.Log("Timer");
+        // Debug.Log("Timer");
         if(isEnable)
             EnableAllInteraction();
         else   
