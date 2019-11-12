@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4211ebbfccb5b1f4f9d344d265a55b2a, type: 3}
   m_Name: Decision Marker
   m_EditorClassIdentifier: 
-  m_Time: 9.716666666666667
+  m_Time: 9.7
   decision: {fileID: 11400000, guid: b585d6383b40b74488556f6dbc63b7a0, type: 2}
   loopTime: 1.5
   retroaction: 0
