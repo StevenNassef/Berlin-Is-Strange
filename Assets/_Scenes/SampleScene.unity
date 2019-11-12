@@ -9367,6 +9367,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2649614672941917562, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
+        type: 3}
+      propertyPath: m_StepOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4126231048776234251, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -11097,7 +11102,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5ee4dca3f2503794bb6e1efad09cada1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 489874365, guid: 29fa1d3b669c54a4fad6820b5fa0077d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 29fa1d3b669c54a4fad6820b5fa0077d, type: 3}
 --- !u!95 &8684332564173362261 stripped
 Animator:
