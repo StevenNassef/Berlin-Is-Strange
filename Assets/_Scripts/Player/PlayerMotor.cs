@@ -2,8 +2,8 @@
 
 public class PlayerMotor : MonoBehaviour
 {
-    [SerializeField] private CharacterController characterController;
-    [SerializeField] private Transform cameraTarget;
+    private CharacterController characterController;
+    private Transform cameraTarget;
     [Space(10)]
     [SerializeField] private float movementSpeed;
     [Space(10)]
@@ -14,7 +14,8 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     void Start()
     {
-
+        characterController = GetComponent<CharacterController>();
+        cameraTarget = PlayerCameraController.instance.CameraTargetTransform;
     }
 
     void Update()

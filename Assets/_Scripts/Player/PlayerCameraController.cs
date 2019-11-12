@@ -8,6 +8,7 @@ public class PlayerCameraController : GameComponent
     [SerializeField] private Camera playerCamera;
     public Camera PlayerCamera { get { return playerCamera; } }
     [SerializeField] private Transform cameraTargetTransform;
+    public Transform CameraTargetTransform { get { return cameraTargetTransform; } }
 
     [Space(10)]
     [SerializeField] private float xAxisSens;
