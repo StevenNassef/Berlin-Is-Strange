@@ -13,14 +13,7 @@ public class DialogHandler : GameComponent
     private float timeToClear;
     private bool printing;
     private bool finishedPrinting;
-    void Start()
-    {
 
-    }
-    void Update()
-    {
-
-    }
     protected override void GamePaused()
     {
         printing = false;
