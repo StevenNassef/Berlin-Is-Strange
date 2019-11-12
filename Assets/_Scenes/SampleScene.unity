@@ -1890,6 +1890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b041f83c67fe7d438aabb857c330e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogText: {fileID: 1162600628}
+  dialogPanel: {fileID: 898470116}
 --- !u!114 &578272335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6448,7 +6450,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1753595596}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: af378f875332cc043a5c2f162f2ff3dc, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: df4ab09cfdd976045b3dd867f482e12c, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
