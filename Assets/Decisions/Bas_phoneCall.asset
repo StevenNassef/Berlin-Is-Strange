@@ -15,7 +15,7 @@ MonoBehaviour:
   decisionQuestion: Can you please bring me my passport?
   firstDecision: Help Ibram
   secondDecision: Go to Sleep
-  firstDecisionCutScene: {fileID: 11400000, guid: f470bf744fdaa39438bf83c8154ff032,
+  firstDecisionCutScene: {fileID: 11400000, guid: af378f875332cc043a5c2f162f2ff3dc,
     type: 2}
   secondDecisionCutScene: {fileID: 11400000, guid: f470bf744fdaa39438bf83c8154ff032,
     type: 2}
