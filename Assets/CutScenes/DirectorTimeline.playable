@@ -930,6 +930,7 @@ MonoBehaviour:
   m_Markers:
     m_Objects:
     - {fileID: -2032777480598839802}
+    - {fileID: 3502689360227616862}
 --- !u!114 &1182641836784184944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1002,6 +1003,25 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: fb0b1dd0a11b5cc40ad2e14bd20fb003
     defaultValue: {fileID: 0}
+--- !u!114 &3502689360227616862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26d21a369cd3143ac6dd3d6a92547c, type: 3}
+  m_Name: Dialog Marker
+  m_EditorClassIdentifier: 
+  m_Time: 19.283333333333335
+  characterName: Bas
+  dialogText: i wonder who is calling right now!
+  speed: 0.05
+  timeToClear: 2
+  retroaction: 0
+  emitOnce: 1
 --- !u!114 &3941341874219778073
 MonoBehaviour:
   m_ObjectHideFlags: 1
