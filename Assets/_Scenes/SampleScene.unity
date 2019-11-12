@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2307,6 +2307,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV
       objectReference: {fileID: 0}
+    - target: {fileID: -8402369624722110742, guid: a2028f7b1a5a3af42a5f33a9b7f5957e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a2028f7b1a5a3af42a5f33a9b7f5957e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2371,11 +2376,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8402369624722110742, guid: a2028f7b1a5a3af42a5f33a9b7f5957e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2635470380025783866, guid: a2028f7b1a5a3af42a5f33a9b7f5957e,
         type: 3}
@@ -6059,6 +6059,40 @@ PrefabInstance:
       propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1753595599}
+    - target: {fileID: 4228819574017602473, guid: 8261855a642dab0488c3c2b87a4ab935,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bbc4f85f72bcf44a8765a44ece5b114,
+        type: 2}
+    - target: {fileID: 4228819574017602473, guid: 8261855a642dab0488c3c2b87a4ab935,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4939075821992307107, guid: 2bbc4f85f72bcf44a8765a44ece5b114,
+        type: 2}
+    - target: {fileID: 4228819574017602473, guid: 8261855a642dab0488c3c2b87a4ab935,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103765662021752437, guid: 8261855a642dab0488c3c2b87a4ab935,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bbc4f85f72bcf44a8765a44ece5b114,
+        type: 2}
+    - target: {fileID: 2103765662021752437, guid: 8261855a642dab0488c3c2b87a4ab935,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4939075821992307107, guid: 2bbc4f85f72bcf44a8765a44ece5b114,
+        type: 2}
+    - target: {fileID: 2103765662021752437, guid: 8261855a642dab0488c3c2b87a4ab935,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8261855a642dab0488c3c2b87a4ab935, type: 3}
 --- !u!20 &6024999491686733067
