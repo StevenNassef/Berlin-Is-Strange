@@ -48,6 +48,23 @@ public class DirectorController : MonoBehaviour
         }
     }
 
+    public void PlayTrackWithPlayer(PlayableAsset timeline)
+    {
+        director.playableAsset = timeline;
+        foreach (PlayableBinding output in timeline.outputs)
+        {
+            if (output.streamName.Contains("PlayerAnimation"))
+            {
+                director.SetGenericBinding(output.sourceObject, PlayerController.instance.CutScenePlayerGFX.GetComponent<Animator>());
+            }
+            else if(output.streamName.Contains("PlayerActivation"))
+            {
+                director.SetGenericBinding(output.sourceObject, PlayerController.instance.CutScenePlayerGFX);
+            }
+        }
+        director.Play();
+    }
+
     public void PlayTrack(PlayableAsset timeline)
     {
         director.playableAsset = timeline;

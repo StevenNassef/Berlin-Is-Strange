@@ -12,6 +12,7 @@ public class PlayerMotor : MonoBehaviour
     [Tooltip("This is the angle at which the rotation factor is applied, to smooth the rotation")]
     [SerializeField] private float rotationAngleThreeshold;
     [SerializeField] private Animator playerAnimator;
+    public Animator PlayerAnimator => playerAnimator;
     void Start()
     {
         characterController = GetComponent<CharacterController>();

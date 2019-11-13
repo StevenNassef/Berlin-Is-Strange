@@ -7,7 +7,10 @@ public class PlayerController : GameComponent
     [SerializeField] private List<GameObject> characterPrefabs;
     [SerializeField] private PlayerMotor motor;
     public PlayerMotor Motor { get { return motor; } }
-    [SerializeField] private GameObject GFX;
+    private GameObject GFX;
+    public GameObject GFXModel => GFX;
+    private GameObject cutScenePlayerGFX;
+    public GameObject CutScenePlayerGFX => cutScenePlayerGFX;
     [Space(20)]
 
     [SerializeField] private GameCharacter characterSelected;
@@ -43,6 +46,8 @@ public class PlayerController : GameComponent
     protected override void GameInitialized()
     {
         GameObject gfx = Instantiate(characterPrefabs[(int)characterSelected], Vector3.one , Quaternion.identity);
+        cutScenePlayerGFX = Instantiate(characterPrefabs[(int)characterSelected], Vector3.one , Quaternion.identity);
+        cutScenePlayerGFX.SetActive(false);
         gfx.transform.SetParent(transform);
         gfx.transform.localPosition = Vector3.zero;
         gfx.transform.localRotation = Quaternion.identity;

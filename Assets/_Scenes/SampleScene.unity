@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: ffb32887cfcfdf241a4f1d9ebed01c64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ffb32887cfcfdf241a4f1d9ebed01c64,
         type: 3}
@@ -6498,7 +6498,7 @@ PrefabInstance:
     - target: {fileID: 476844645736854800, guid: 54051aa1b91f1ef4cbd520cc858fc527,
         type: 3}
       propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayTrack
+      value: PlayTrackWithPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 476844645736854800, guid: 54051aa1b91f1ef4cbd520cc858fc527,
         type: 3}
@@ -9875,8 +9875,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669264028}
-  m_LocalRotation: {x: 0.011750438, y: -0.19850865, z: -0.002434341, w: -0.9800257}
-  m_LocalPosition: {x: 9.181389, y: 3.0083656, z: 13.945351}
+  m_LocalRotation: {x: 0.04181209, y: -0.90167475, z: 0.089558564, w: 0.42096758}
+  m_LocalPosition: {x: -6.981112, y: 3.1641295, z: 8.582119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
