@@ -29,6 +29,11 @@ public class PlayerMotor : MonoBehaviour
         // targetRotation = transform.rotation;
     }
 
+    public void SetAnimator(Animator animator)
+    {
+        this.playerAnimator = animator;
+    }
+
     private void MovePlayer()
     {
         Vector3 targetDirection = cameraTarget.forward * Input.GetAxis(InputController.instance.VerticalAxis);
