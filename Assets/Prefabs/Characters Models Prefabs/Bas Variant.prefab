@@ -72,5 +72,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5ee4dca3f2503794bb6e1efad09cada1, type: 2}
+    - target: {fileID: -6057140222963153312, guid: c737c992c96b2924095a59a0cc797e59,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737c992c96b2924095a59a0cc797e59, type: 3}
