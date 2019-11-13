@@ -12,6 +12,7 @@ public class PlayerMotor : MonoBehaviour
     [Tooltip("This is the angle at which the rotation factor is applied, to smooth the rotation")]
     [SerializeField] private float rotationAngleThreeshold;
     [SerializeField] private Animator playerAnimator;
+    public Animator PlayerAnimator => playerAnimator;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -27,6 +28,11 @@ public class PlayerMotor : MonoBehaviour
         var newRotation = new Vector3(transform.eulerAngles.x, referenceTransform.eulerAngles.y, transform.eulerAngles.z);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(newRotation), rotationSpeed * Time.fixedDeltaTime);
         // targetRotation = transform.rotation;
+    }
+
+    public void SetAnimator(Animator animator)
+    {
+        this.playerAnimator = animator;
     }
 
     private void MovePlayer()
