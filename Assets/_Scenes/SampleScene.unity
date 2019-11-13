@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: ffb32887cfcfdf241a4f1d9ebed01c64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ffb32887cfcfdf241a4f1d9ebed01c64,
         type: 3}
@@ -6303,6 +6303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MichaelCutScene
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 243ae3c849f95e74da7273927dfcc0f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 243ae3c849f95e74da7273927dfcc0f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9277,8 +9282,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669264028}
-  m_LocalRotation: {x: 0.04181209, y: -0.90167475, z: 0.089558564, w: 0.42096758}
-  m_LocalPosition: {x: -6.981112, y: 3.1641295, z: 8.582119}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: -0.91993475}
+  m_LocalPosition: {x: -14.307269, y: 8.032682, z: -11.135311}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
