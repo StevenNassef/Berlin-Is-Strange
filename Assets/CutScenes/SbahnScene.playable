@@ -193,8 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 0.9
   characterName: Ibram
-  dialogText: Where is bas i am going to be late!
-  speed: 0.05
+  dialogText: Where is Bas? I am going to be late!
+  speed: 0.02
   timeToClear: 2
   retroaction: 0
   emitOnce: 1
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26d21a369cd3143ac6dd3d6a92547c, type: 3}
   m_Name: Dialog Marker
   m_EditorClassIdentifier: 
-  m_Time: 12.966666666666667
+  m_Time: 11.566666666666666
   characterName: Ibram
   dialogText: Thanks alot man!
   speed: 0.02
@@ -1706,8 +1706,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 8.7
   characterName: Bas
-  dialogText: Here you go, have a safe trip.
-  speed: 0.02
+  dialogText: Here you go. Have a safe trip.
+  speed: 0.03
   timeToClear: 2
   retroaction: 0
   emitOnce: 1

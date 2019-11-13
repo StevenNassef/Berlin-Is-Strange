@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6906,7 +6906,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669264028}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: -0.9670129}
+  m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
   m_LocalPosition: {x: -14.307269, y: 8.032682, z: -11.135311}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7715,7 +7715,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1753595596}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: df4ab09cfdd976045b3dd867f482e12c, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: f470bf744fdaa39438bf83c8154ff032, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -7783,6 +7783,8 @@ PlayableDirector:
     value: {fileID: 578272335}
   - key: {fileID: 3196907230100414258, guid: 6fc9e7334babdee4ca74e113e670c809, type: 2}
     value: {fileID: 1393529849}
+  - key: {fileID: 9135934632650458716, guid: f470bf744fdaa39438bf83c8154ff032, type: 2}
+    value: {fileID: 578272335}
   m_ExposedReferences:
     m_References:
     - 2703033134b728144aa86faf8a37b8f3: {fileID: 0}
@@ -9551,11 +9553,6 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2649614672941917562, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
-        type: 3}
-      propertyPath: m_StepOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4126231048776234251, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -11294,6 +11291,11 @@ PrefabInstance:
     - target: {fileID: 4848929885857712306, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
         type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649614672941917562, guid: 29fa1d3b669c54a4fad6820b5fa0077d,
+        type: 3}
+      propertyPath: m_StepOffset
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 783517717682229036, guid: 29fa1d3b669c54a4fad6820b5fa0077d,

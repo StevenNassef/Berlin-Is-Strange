@@ -60,6 +60,25 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: f0909fc06162d2146b5d5880c313a079
     defaultValue: {fileID: 0}
+--- !u!114 &-3536586146215981764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26d21a369cd3143ac6dd3d6a92547c, type: 3}
+  m_Name: Dialog Marker
+  m_EditorClassIdentifier: 
+  m_Time: 0.26666666666666666
+  characterName: Bas
+  dialogText: He needs to learn to not forget stuff!
+  speed: 0.04
+  timeToClear: 2
+  retroaction: 0
+  emitOnce: 1
 --- !u!114 &-3418271256731264526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +94,25 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 61928e555fa1e6d43abf1c14c1151293
     defaultValue: {fileID: 0}
+--- !u!114 &-2162068457565675681
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26d21a369cd3143ac6dd3d6a92547c, type: 3}
+  m_Name: Dialog Marker
+  m_EditorClassIdentifier: 
+  m_Time: 5.016666666666667
+  characterName: Bas
+  dialogText: Good night to me!
+  speed: 0.03
+  timeToClear: 1
+  retroaction: 0
+  emitOnce: 1
 --- !u!114 &-1610523638758688367
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,6 +382,7 @@ MonoBehaviour:
   m_Version: 0
   m_Tracks:
   - {fileID: 8902435496970984513}
+  - {fileID: 9135934632650458716}
   - {fileID: 8657101788399376436}
   - {fileID: -1610523638758688367}
   - {fileID: -544591292755002061}
@@ -586,3 +625,28 @@ MonoBehaviour:
     m_Objects:
     - {fileID: 2823739530813079378}
     - {fileID: 86322733512917163}
+--- !u!114 &9135934632650458716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75847fd1bb1ee8847be0a645794771d5, type: 3}
+  m_Name: Dialog Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -3536586146215981764}
+    - {fileID: -2162068457565675681}

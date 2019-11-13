@@ -598,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 12.3
   characterName: Bas
-  dialogText: i am really sleepy, i think i will go to sleep.
+  dialogText: I am really sleepy. I think I will go to sleep.
   speed: 0.05
   timeToClear: 2
   retroaction: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 19.283333333333335
   characterName: Bas
-  dialogText: i wonder who is calling right now!
+  dialogText: I wonder who is calling right now!
   speed: 0.05
   timeToClear: 2
   retroaction: 0
