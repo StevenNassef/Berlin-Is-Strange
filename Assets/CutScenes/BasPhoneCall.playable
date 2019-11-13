@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 0.18333333333333332
   characterName: Bas
-  dialogText: it is ibram.
-  speed: 0.05
-  timeToClear: 2
+  dialogText: It is Ibram.
+  speed: 0.04
+  timeToClear: 1
   retroaction: 0
   emitOnce: 1
 --- !u!114 &-8662419455976305324
@@ -458,8 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 2.2333333333333334
   characterName: Bas
-  dialogText: Hi ibram, what's up?
-  speed: 0.05
+  dialogText: Hi Ibram, what's up?
+  speed: 0.03
   timeToClear: 3
   retroaction: 0
   emitOnce: 1
@@ -802,10 +802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 3.9
   characterName: Ibram
-  dialogText: Hi Bas, i forgot my passport man can you, can you please bring it to
-    me.
-  speed: 0.03
-  timeToClear: 6
+  dialogText: Hi Bas, I forgot my passport man, can you please bring it to me?
+  speed: 0.04
+  timeToClear: 1.5
   retroaction: 0
   emitOnce: 1
 --- !u!114 &5314021326674608067
