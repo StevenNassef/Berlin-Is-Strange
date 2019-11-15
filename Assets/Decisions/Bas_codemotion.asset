@@ -15,7 +15,7 @@ MonoBehaviour:
   decisionQuestion: Should I tell the guys?
   firstDecision: Just go alone
   secondDecision: Tell the guys
-  firstDecisionCutScene: {fileID: 11400000, guid: af378f875332cc043a5c2f162f2ff3dc,
+  firstDecisionCutScene: {fileID: 11400000, guid: cb4635d7e8675f844bf6e7ffca2abeba,
     type: 2}
-  secondDecisionCutScene: {fileID: 11400000, guid: d9bb78e37e5a30945921e466f04a7175,
+  secondDecisionCutScene: {fileID: 11400000, guid: cb4635d7e8675f844bf6e7ffca2abeba,
     type: 2}
