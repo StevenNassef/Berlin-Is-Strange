@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 25.4
+  m_Time: 24.033333333333335
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: b8ba0fcd119d88a4f8d4c3dcaf439cf7, type: 2}
@@ -1196,6 +1196,7 @@ MonoBehaviour:
     m_Objects:
     - {fileID: -5058904847981874812}
     - {fileID: 4385766543261836614}
+    - {fileID: 8524597890402304584}
 --- !u!114 &6213947453009519651
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1627,6 +1628,22 @@ MonoBehaviour:
     m_DisplayName: CM vcam TellingLISPeaky 2
   m_Markers:
     m_Objects: []
+--- !u!114 &8524597890402304584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 24.033333333333335
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 9311938db218be244bbf92a1c6669dd3, type: 2}
 --- !u!114 &8893465006619853533
 MonoBehaviour:
   m_ObjectHideFlags: 1
