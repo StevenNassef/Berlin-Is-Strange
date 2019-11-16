@@ -15562,6 +15562,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1173597941}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1182262104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1448999832783081806, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+    type: 3}
+  m_PrefabInstance: {fileID: 1448999833534725271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1186033934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: cb5e69ce57f57de4096ec60b6a82ab22,
@@ -28894,6 +28900,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
         type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
       objectReference: {fileID: 847845288}
@@ -29152,6 +29163,65 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[50].value
       value: 
       objectReference: {fileID: 1426180452}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a49569dcb4fbda949a849a738ed46962,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[52].key
+      value: 
+      objectReference: {fileID: 5700229330600662550, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[53].key
+      value: 
+      objectReference: {fileID: 6532477224494443551, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[54].key
+      value: 
+      objectReference: {fileID: -6490694498203530605, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[55].key
+      value: 
+      objectReference: {fileID: 1883858878224655890, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[56].key
+      value: 
+      objectReference: {fileID: 8457997942676658545, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[57].key
+      value: 
+      objectReference: {fileID: 3002286298959144059, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[58].key
+      value: 
+      objectReference: {fileID: 4934462669806428303, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[59].key
+      value: 
+      objectReference: {fileID: -6320112651087141744, guid: df46ccbb3f6a080438c0f6ed45aaebf0,
+        type: 2}
+    - target: {fileID: 1448999833881124506, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[51].value
+      value: 
+      objectReference: {fileID: 1182262104}
     - target: {fileID: 1448999833881124507, guid: 8618e0f96ac93f7479b9fb22c1a80c06,
         type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
