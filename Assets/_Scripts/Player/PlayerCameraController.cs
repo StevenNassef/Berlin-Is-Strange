@@ -46,7 +46,6 @@ public class PlayerCameraController : GameComponent
     }
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         playerTransform = PlayerController.instance.transform;
         InitializeCamera();
     }
@@ -62,6 +61,7 @@ public class PlayerCameraController : GameComponent
 
         // cameraControllerOffset = transform.position - playerTransform.position;
         // targetOffset = transform.position - cameraTargetTransform.position;
+        // Cursor.lockState = CursorLockMode.Locked;
         cameraTargetTransform.localPosition = targetOffset;
         cameraTransform.localPosition = cameraOffset;
         transform.position = playerTransform.position + cameraControllerOffset;

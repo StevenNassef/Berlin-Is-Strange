@@ -72,9 +72,14 @@ public class PlayerController : GameComponent
 
     }
 
+    public void SelectCharacter(int i)
+    {
+        characterSelected = (GameCharacter)i;
+    }
+
 }
 
 public enum GameCharacter 
 {
-    Ibram, Bas, Michael, Steven
+    Ibram = 1, Bas = 0, Michael = 2, Steven = 3
 }

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         loadGame();
-        StartLevel();
+        // StartLevel();
     }
 
     public void StartLevel()
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     public void loadGame()
     {
         _gamePaused = true;
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
         if (OnGameLoaded != null)
         {
             OnGameLoaded.Invoke();
