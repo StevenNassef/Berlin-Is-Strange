@@ -25043,12 +25043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c2b07c95f06ef4aa19437dfd4924c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  overrideAsset: {fileID: 11400000, guid: df4ab09cfdd976045b3dd867f482e12c, type: 2}
-=======
   cutSceneCameraObject: {fileID: 1669264028}
   overrideAsset: {fileID: 11400000, guid: f470bf744fdaa39438bf83c8154ff032, type: 2}
->>>>>>> a5313ecd88495d07ae08f574906426dff16c4de7
   timeLines:
   - {fileID: 11400000, guid: df4ab09cfdd976045b3dd867f482e12c, type: 2}
   - {fileID: 11400000, guid: 6fc9e7334babdee4ca74e113e670c809, type: 2}
