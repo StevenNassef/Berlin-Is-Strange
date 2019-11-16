@@ -56,6 +56,17 @@ public class PlayerCameraController : GameComponent
             CameraMovement();
     }
 
+    protected override void GameLoaded()
+    {
+        cameraTransform.gameObject.SetActive(false);
+    }
+
+    protected  override void GameInitialized()
+    {
+        cameraTransform.gameObject.SetActive(true);
+        InitializeCamera();
+    }
+
     private void InitializeCamera()
     {
 

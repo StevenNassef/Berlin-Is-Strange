@@ -50,6 +50,8 @@ public class MainMenuController : GameComponent
 
     protected override void OnComponentEnabled()
     {
+        charSelected = -1;
+        selected = false;
         mainCamera = mainCameraObject.GetComponent<Camera>();
         mainCameraObject.SetActive(true);
         charSelectCameraTransform.position = startPos.position;
@@ -58,6 +60,11 @@ public class MainMenuController : GameComponent
     protected override void GameInitialized()
     {
         gameObject.SetActive(false);
+    }
+
+    protected override void GameLoaded()
+    {
+        gameObject.SetActive(true);
     }
 
     public void SelectChar()
