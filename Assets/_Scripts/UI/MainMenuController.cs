@@ -126,6 +126,7 @@ public class MainMenuController : GameComponent
 
     public void BackToMainMenu()
     {
+        startPanel.SetActive(true);
         charSelectCameraTransform.position = startPos.position;
         director.playableAsset = charSelctionMenuOut;
         director.Play();
