@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public static event GameControls OnCutSceneStarted;
     public static event GameControls OnCutSceneEnded;
     public static event GameControls OnGameInitialized;
-
+    [SerializeField] private GameObject mainMenuObject;
     [SerializeField] private bool _gameEnded;
     public bool isGameEnded { get { return _gameEnded; } }
     [SerializeField] private bool _gamePaused;
@@ -75,12 +75,14 @@ public class GameManager : MonoBehaviour
     public void loadGame()
     {
         _gamePaused = true;
-        // Time.timeScale = 0;
+        
+        Time.timeScale = 1;
         if (OnGameLoaded != null)
         {
             OnGameLoaded.Invoke();
             Debug.Log("Game Loaded");
         }
+        mainMenuObject.SetActive(true);
     }
     public void IntializeGame()
     {
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         _gameEnded = false;
         _gamePaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
         if (OnGameStarted != null)
         {
             OnGameStarted.Invoke();
@@ -154,9 +157,9 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        IntializeGame();
-        StartGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // IntializeGame();
+        // StartGame();
     }
 
     public void GameOver(GameState state)

@@ -43,6 +43,12 @@ public class InputController : GameComponent
             GameManager.instance.StartLevel();
             DirectorController.instance.OverrideScene();
         }
+        else
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.PauseGame();
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
 }

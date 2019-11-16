@@ -19,6 +19,7 @@ public class PlayerController : GameComponent
 
     private static PlayerController _instance;
     public static PlayerController instance { get { return _instance; } }
+    private Vector3 initialPos;
 
     void Awake()
     {
@@ -41,6 +42,7 @@ public class PlayerController : GameComponent
     void Start()
     {
         cameraController = PlayerCameraController.instance;
+        initialPos = transform.position;
     }
 
     protected override void GameInitialized()
@@ -53,6 +55,21 @@ public class PlayerController : GameComponent
         gfx.transform.localRotation = Quaternion.identity;
         motor.SetAnimator(gfx.GetComponent<Animator>());
         GFX = gfx;
+        GFX.SetActive(false);
+    }
+
+    protected override void GameLoaded()
+    {
+        if(cutScenePlayerGFX != null)
+        {
+            Destroy(cutScenePlayerGFX);
+        }
+        if(GFX != null)
+        {
+            Destroy(GFX);
+        }
+        motor.enabled = false;
+        transform.position = initialPos;
     }
 
     protected override void CutSceneEnded()

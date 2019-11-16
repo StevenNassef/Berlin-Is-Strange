@@ -5,6 +5,8 @@ using UnityEngine.Timeline;
 using UnityEngine.Playables;
 public class DirectorController : GameComponent
 {
+    [SerializeField] private GameObject cutSceneCameraObject;
+    [Space(10)]
     [SerializeField] private PlayableAsset overrideAsset;
     [SerializeField] List<TimelineAsset> timeLines;
     [SerializeField] List<PlayableAsset> StartScenes;
@@ -12,8 +14,9 @@ public class DirectorController : GameComponent
     private PlayableDirector director;
 
     private static DirectorController _instance;
-
     public static DirectorController instance { get { return _instance; } }
+
+    
     void Awake()
     {
         //Check if instance already exists
@@ -41,6 +44,13 @@ public class DirectorController : GameComponent
     {
         director.playableAsset = StartScenes[(int)PlayerController.instance.CharacterSelected];
         director.Play();
+    }
+
+    protected override void GameLoaded()
+    {
+        if(director != null)
+            director.Stop();
+        cutSceneCameraObject.SetActive(false);
     }
 
     void Update()
