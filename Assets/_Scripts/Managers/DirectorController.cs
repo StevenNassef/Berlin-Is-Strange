@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
-public class DirectorController : MonoBehaviour
+public class DirectorController : GameComponent
 {
     [SerializeField] List<TimelineAsset> timeLines;
+    [SerializeField] List<PlayableAsset> StartScenes;
+    public List<PlayableAsset> StartScenesList => StartScenes;
     private PlayableDirector director;
 
     private static DirectorController _instance;
@@ -32,6 +34,12 @@ public class DirectorController : MonoBehaviour
     void Start()
     {
         director = GetComponent<PlayableDirector>();
+    }
+
+    protected override void GameStarted()
+    {
+        director.playableAsset = StartScenes[(int)PlayerController.instance.CharacterSelected];
+        director.Play();
     }
 
     void Update()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-public class MainMenuController : MonoBehaviour
+public class MainMenuController : GameComponent
 {
     [SerializeField] private PlayableAsset charSelctionMenuIn;
     [SerializeField] private PlayableAsset charSelctionMenuOut;
@@ -10,51 +10,65 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private PlayableAsset charSelectedOut;
 
     [Space(5)]
-    [SerializeField] private Camera mainCamera;
-    [Space(5)]
-    [SerializeField] private PlayableDirector director;
-    [Space(5)]
+    private Camera mainCamera;
+    [SerializeField] private GameObject mainCameraObject;
+
+    [Space(10)]
+    [Header("UI")]
+    [SerializeField] private GameObject startPanel;
+    [Space(10)]
     [Header("Virtual Cameras")]
-    [SerializeField] private Transform startMenuCameraTransform;
+    [SerializeField] private PlayableDirector director;
     [SerializeField] private Transform charSelectCameraTransform;
     [SerializeField] private Transform mainMenuMainCamTransform;
     [Space(10)]
+    [Header("Lights and VFX")]
     [SerializeField] private List<Light> mainMenuLights;
+    [Space(5)]
+    [Header("Camera Positions")]
+    [SerializeField] private Transform startPos;
     [SerializeField] private List<Transform> cameraPositions;
 
     private int charSelected = -1;
     private bool selected;
-    private Vector3 initialSecondaryCameraPos;
+
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        initialSecondaryCameraPos = charSelectCameraTransform.position;
     }
 
     void Update()
     {
         CheckForSelection();
 
-        if (Input.GetMouseButtonDown(0))
+        if (!selected && Input.GetMouseButtonDown(0))
         {
             SelectChar();
         }
     }
 
-    private void OnEnable()
+    protected override void OnComponentEnabled()
     {
-        charSelectCameraTransform.position = initialSecondaryCameraPos;
-        director.playableAsset = mainMenuIdle;
-        director.Play();
+        mainCamera = mainCameraObject.GetComponent<Camera>();
+        mainCameraObject.SetActive(true);
+        charSelectCameraTransform.position = startPos.position;
+        startPanel.SetActive(true);
+    }
+    protected override void GameInitialized()
+    {
+        gameObject.SetActive(false);
     }
 
     public void SelectChar()
     {
         if (charSelected > -1)
         {
+
             charSelectCameraTransform.position = cameraPositions[charSelected].position;
-            director.playableAsset = charSelection;
+            director.playableAsset = charSelectedIn;
             selected = true;
+            PlayerController.instance.SelectCharacter(charSelected);
             mainMenuLights[charSelected].color = Color.green;
             director.Play();
         }
@@ -71,16 +85,7 @@ public class MainMenuController : MonoBehaviour
                 if (hit.collider.CompareTag("CharSelectionTrigger"))
                 {
                     GameObject selectedChar = hit.collider.gameObject;
-                    if (charSelected != -1)
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            if (i != charSelected)
-                            {
-                                mainMenuLights[i].color = Color.white;
-                            }
-                        }
-                    }
+
                     if (selectedChar.name.Contains("1"))
                         charSelected = 0;
                     else if (selectedChar.name.Contains("2"))
@@ -92,37 +97,59 @@ public class MainMenuController : MonoBehaviour
 
                     mainMenuLights[charSelected].color = Color.blue;
                 }
-            }
-            else
-            {
-                Debug.Log("fail");
-                for (int i = 0; i < 4; i++)
+                else
                 {
-                    mainMenuLights[i].color = Color.white;
+                    Debug.Log("fail");
+                    for (int i = 0; i < 4; i++)
+                    {
+                        mainMenuLights[i].color = Color.white;
+                    }
+                    charSelected = -1;
                 }
-                charSelected = -1;
             }
         }
     }
 
+    public void PlayTimeLineOnLoop(PlayableAsset timeLine)
+    {
+        director.extrapolationMode = DirectorWrapMode.Loop;
+        director.playableAsset = timeLine;
+        director.Play();
+    }
+
+    public void PlayTimeLineOnHold(PlayableAsset timeLine)
+    {
+        director.extrapolationMode = DirectorWrapMode.Hold;
+        director.playableAsset = timeLine;
+        director.Play();
+    }
+
+    public void BackToMainMenu()
+    {
+        charSelectCameraTransform.position = startPos.position;
+        director.playableAsset = charSelctionMenuOut;
+        director.Play();
+
+    }
     public void CancelSelection()
     {
+        Debug.Log("Cancel");
         selected = false;
         charSelected = -1;
-        charSelectCameraTransform.position = initialSecondaryCameraPos;
-        director.playableAsset = mainMenuIdle;
+        director.playableAsset = charSelectedOut;
+        director.Play();
         for (int i = 0; i < 4; i++)
         {
             mainMenuLights[i].color = Color.white;
         }
-        director.Play();
     }
-
     public void StartGame()
     {
         if (charSelected != -1)
         {
             PlayerController.instance.SelectCharacter(charSelected);
+            mainCameraObject.SetActive(false);
+            GameManager.instance.StartLevel();
         }
     }
 }
