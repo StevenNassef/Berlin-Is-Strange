@@ -37,7 +37,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -7251367662773826883}
-    m_Duration: 16.083333333333336
+    m_Duration: 15.4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6871357285232419694}
     m_EaseInDuration: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -4775026965163745701}
-    m_Duration: 16.083333333333336
+    m_Duration: 15.4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -109285232528416475}
     m_EaseInDuration: 0
@@ -412,21 +412,6 @@ MonoBehaviour:
     m_Objects:
     - {fileID: -4626280878259949559}
     - {fileID: 4634958777729999732}
---- !u!114 &4308638295516804209
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  VirtualCamera:
-    exposedName: 487ad44cfc097bd40a32cfd61b4b7a84
-    defaultValue: {fileID: 0}
 --- !u!114 &4344010074444252460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,7 +474,7 @@ MonoBehaviour:
     m_Start: 9.466666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -3509113340323548915}
-    m_Duration: 6.616666666666669
+    m_Duration: 5.933333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4447594830338098571}
     m_EaseInDuration: 0
@@ -584,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 16.083333333333336
+  m_Time: 15.4
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: b8ba0fcd119d88a4f8d4c3dcaf439cf7, type: 2}
@@ -972,7 +957,7 @@ MonoBehaviour:
     m_Start: 11.083333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 6941357087240859150}
-    m_Duration: 4.966666666666669
+    m_Duration: 4.316666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5118105446825001814}
     m_EaseInDuration: 0
@@ -1057,6 +1042,21 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &5246059244475441921
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  VirtualCamera:
+    exposedName: 3a30d9a77b630f54896018cc982a6f5f
+    defaultValue: {fileID: 0}
 --- !u!114 &5413135831166365298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1165,7 +1165,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam11
+    m_DisplayName: CM vcam IbramPass3
   - m_Version: 1
     m_Start: 0.016666666666666666
     m_ClipIn: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam9
+    m_DisplayName: CM vcam IbramPass1
   - m_Version: 1
     m_Start: 3.7
     m_ClipIn: 0
@@ -1285,12 +1285,12 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam10
+    m_DisplayName: CM vcam IbramPsss2
   - m_Version: 1
     m_Start: 11.083333333333334
     m_ClipIn: 0
-    m_Asset: {fileID: 4308638295516804209}
-    m_Duration: 5
+    m_Asset: {fileID: 5246059244475441921}
+    m_Duration: 4.316666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5928893041353217515}
     m_EaseInDuration: 0
@@ -1299,25 +1299,7 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1354,7 +1336,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam12
+    m_DisplayName: CM vcam IbramPass4
   m_Markers:
     m_Objects: []
 --- !u!114 &6445038484353910565
@@ -1527,11 +1509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26d21a369cd3143ac6dd3d6a92547c, type: 3}
   m_Name: Dialog Marker
   m_EditorClassIdentifier: 
-  m_Time: 11.566666666666666
+  m_Time: 12.15
   characterName: Ibram
   dialogText: Thanks alot man!
   speed: 0.02
-  timeToClear: 2
+  timeToClear: 1
   retroaction: 0
   emitOnce: 1
 --- !u!114 &7760406256616323493
@@ -1690,14 +1672,14 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 0.03333333333333144
+    m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: Picking Animation
   - m_Version: 1
-    m_Start: 11.116666666666665
+    m_Start: 11.083333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 2940789948931788354}
-    m_Duration: 4.966666666666669
+    m_Duration: 4.316666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 7760406256616323493}
     m_EaseInDuration: 0
@@ -1798,7 +1780,7 @@ MonoBehaviour:
   characterName: Bas
   dialogText: Here you go. Have a safe trip.
   speed: 0.03
-  timeToClear: 2
+  timeToClear: 1.5
   retroaction: 0
   emitOnce: 1
 --- !u!114 &8650693990523472967

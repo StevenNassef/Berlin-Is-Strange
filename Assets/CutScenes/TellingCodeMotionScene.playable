@@ -432,7 +432,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam12
+    m_DisplayName: CM vcam CodemotionTell1
   - m_Version: 1
     m_Start: 7.649999999999996
     m_ClipIn: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam15
+    m_DisplayName: CM vcam CodemotionTell2
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam16
+    m_DisplayName: CM vcam CodemotionTell3
   - m_Version: 1
     m_Start: 12.649999999999995
     m_ClipIn: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam16
+    m_DisplayName: CM vcam CodemotionTell3
   m_Markers:
     m_Objects: []
 --- !u!114 &-3349197203498810993
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   characterName: Mike
   dialogText: I think that will be an interesting event. I will go.
   speed: 0.04
-  timeToClear: 2
+  timeToClear: 1
   retroaction: 0
   emitOnce: 1
 --- !u!114 &7870136251621923724

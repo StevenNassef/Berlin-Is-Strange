@@ -5,6 +5,7 @@ using UnityEngine.Timeline;
 using UnityEngine.Playables;
 public class DirectorController : GameComponent
 {
+    [SerializeField] private PlayableAsset overrideAsset;
     [SerializeField] List<TimelineAsset> timeLines;
     [SerializeField] List<PlayableAsset> StartScenes;
     public List<PlayableAsset> StartScenesList => StartScenes;
@@ -54,6 +55,12 @@ public class DirectorController : GameComponent
             director.playableAsset = timeLines[i];
             director.Play();
         }
+    }
+
+    public void OverrideScene()
+    {
+        director.playableAsset = overrideAsset;
+        director.Play();
     }
 
     public void PlayTrackWithPlayer(PlayableAsset timeline)

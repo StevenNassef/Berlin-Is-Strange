@@ -64,7 +64,8 @@ public class PlayerController : GameComponent
     protected override void CutSceneStarted()
     {
         motor.enabled = false;
-        GFX.SetActive(false);
+        if(GFX != null)
+            GFX.SetActive(false);
     }
 
     void Update()

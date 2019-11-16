@@ -15,7 +15,7 @@ public class InputController : GameComponent
     public string InteractionButton { get { return interactionButton; } }
 
     private static InputController _instance;
-    
+
     public static InputController instance { get { return _instance; } }
     void Awake()
     {
@@ -34,6 +34,15 @@ public class InputController : GameComponent
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
         // GameAnalytics.Initialize(); 
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            GameManager.instance.StartLevel();
+            DirectorController.instance.OverrideScene();
+        }
     }
 
 }
